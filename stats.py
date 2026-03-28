@@ -10,6 +10,21 @@ def get_num_chars(book_text):
         if char in my_dict:
             my_dict[char] += 1
         else:
-            my_dict[char] = 1   
-    
-    return my_dict
+            my_dict[char] = 1
+
+    return my_dict   
+
+def sort_on(d):
+    return d["num"]        
+
+def chars_dict_to_sorted_list(num_chars):
+    dict_list = []
+
+    for ch in num_chars:
+        dict_list.append({"char": ch, "num": num_chars[ch]})
+
+    dict_list.sort(reverse=True, key=sort_on)
+
+    return dict_list
+
+
